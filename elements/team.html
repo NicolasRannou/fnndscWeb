@@ -1,0 +1,86 @@
+<link rel="import" href="people.html">
+<link rel="import" href="../bower_components/polymer-elements/polymer-jsonp/polymer-jsonp.html">
+
+<polymer-element name="team-element"  attributes="">
+  <template>
+    <style>
+      @host { :scope {display: block;} }
+      .sticky {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        width:100%;
+        background: rgb(52, 94, 156);
+        color: #FFF;
+        padding: 25px;
+        text-transform: uppercase;
+      }
+      .fixed{
+        position: fixed;
+        top: 0;
+      }
+    </style>
+
+  <div id="faculty">
+  <div class="sticky">
+  FACULTY
+  </div>
+  <template repeat="{{people in team.feed.entry}}">
+    <template if="{{people.gsx$group.$t === 'faculty'}}">
+      <people-element people="{{people}}"></people-element>
+    </template>
+  </template>
+  </div>
+  
+  <div id="staff">
+  <div class="sticky">
+  STAFF
+  </div>
+  <template repeat="{{people in team.feed.entry}}">
+    <template if="{{people.gsx$group.$t === 'staff'}}">
+      <people-element people="{{people}}"></people-element>
+    </template>
+  </template>
+  </div>
+  
+  <div id="collaborators">
+  <div class="sticky">
+  COLLABORATORS
+  </div>
+  <template repeat="{{people in team.feed.entry}}">
+    <template if="{{people.gsx$group.$t === 'collaborators'}}">
+      <people-element people="{{people}}"></people-element>
+    </template>
+  </template>
+  </div>
+  
+  <div id="alumni">
+  <div class="sticky">
+  ALUMNI
+  </div>
+  <template repeat="{{people in team.feed.entry}}">
+    <template if="{{people.gsx$group.$t === 'alumni'}}">
+      <people-element people="{{people}}"></people-element>
+    </template>
+  </template>
+  </div>
+  
+  <polymer-jsonp auto url="https://spreadsheets.google.com/feeds/list/0AixJ3QQvklnmdExWYWNTdU9IX1pSc0h3ZF9DNVdHYlE/od6/public/values?alt=json-in-script&callback=" response="{{team}}"></polymer-jsonp>
+
+  </template>
+  <script>
+    Polymer('team-element', {
+      //applyAuthorStyles: true,
+      //resetStyleInheritance: true,
+      ready: function() {
+//    var sticky = this.shadowRoot.querySelector('.sticky');
+//      window.console.log('sticky', sticky);
+//    var origOffsetY = sticky.offsetTop;
+      },
+      enteredView: function() { },
+      leftView: function() { },
+      attributeChanged: function(attrName, oldVal, newVal) { }
+    });
+
+  </script>
+</polymer-element>

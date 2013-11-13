@@ -1,0 +1,36 @@
+{
+  "name": "polymer-ui-elements",
+  "version": "0.0.20131107",
+  "homepage": "https://github.com/Polymer/polymer-ui-elements",
+  "authors": [
+    "Polymer Authors <polymer-dev@googlegroups.com>"
+  ],
+  "description": "Common polymer UI elements",
+  "keywords": [
+    "polymer",
+    "web-components",
+    "web components"
+  ],
+  "dependencies": {
+    "polymer-elements": "0.0.20131010"
+  },
+  "license": "BSD",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests",
+    "docs",
+    "tools"
+  ],
+  "_release": "0.0.20131107",
+  "_resolution": {
+    "type": "version",
+    "tag": "v0.0.20131107",
+    "commit": "e831ea6f8df8685e8e80b978f970581a6708948b"
+  },
+  "_source": "git://github.com/Polymer/polymer-ui-elements.git",
+  "_target": "*",
+  "_originalSource": "polymer-ui-elements"
+}

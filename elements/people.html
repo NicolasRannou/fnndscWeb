@@ -1,0 +1,68 @@
+<polymer-element name="people-element"  attributes="people">
+  <template>
+    <style>
+      @host { :scope {display: block;} }
+      #main {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-flex-flow: row;
+        flex-flow: row;
+        width:100%;
+      }
+      #picture{
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        -webkit-flex: 3 1 20%;
+        flex: 1 1 20%;
+        -webkit-order: 1;
+        order: 1;
+      }
+      #info{
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        -webkit-flex: 3 1 20%;
+        flex: 1 1 80%;
+        -webkit-order: 2;
+        order: 2;
+      }
+      #bio {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        width:100%;
+      }
+    </style>
+    <div id="main">
+      <div id="picture">
+        <img src="http://meanion.files.wordpress.com/2012/09/minion-clipboard.jpg" style="width:60%; padding-left:20%">
+      </div>
+      <div id="info">
+        <h1>{{people.gsx$name.$t}}</h1>
+        <h3>{{people.gsx$hospitaltitle.$t}}</br>
+        {{people.gsx$academictitle.$t}}</br>
+        {{people.gsx$department.$t}}
+        </h3>
+      </div>
+    </div>
+    <div id="bio">
+    </div>
+  </template>
+  <script>
+    Polymer('people-element', {
+      //applyAuthorStyles: true,
+      //resetStyleInheritance: true,
+      peopleChanged: function() {
+        this.$.bio.innerHTML = this.people.gsx$bio.$t;
+      },
+      created: function() { },
+      enteredView: function() { },
+      leftView: function() { },
+      attributeChanged: function(attrName, oldVal, newVal) { }
+    });
+  </script>
+</polymer-element>
